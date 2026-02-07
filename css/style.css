@@ -323,9 +323,7 @@ header {
 
 /* Footer */
 
-/* ============================================
-   FOOTER HORIZONTAL - SLOGAN ARRIBA
-============================================ */
+/*FOOTER HORIZONTAL - SLOGAN ARRIBA */
 .site-footer {
     background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
     color: white;
@@ -391,117 +389,6 @@ header {
     color: white;
 }
 
-/* diseño responsivo */
-
-@media (max-width: 1200px) {
-    .nombre-sitio {
-        font-size: 4rem;
-        padding: 2.5rem;
-    }
-    
-    .contenedor-guias {
-        grid-template-columns: 1fr;
-        max-width: 800px;
-    }
-}
-
-@media (max-width: 768px) {
-    html {
-        font-size: 55%;
-    }
-    
-    header {
-        height: 50vh;
-        min-height: 300px;
-    }
-    
-    .nombre-sitio {
-        font-size: 3rem;
-        padding: 2rem;
-    }
-    
-    .navegacion-principal {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-    }
-    
-    .enlace-menu {
-        width: 80%;
-        text-align: center;
-    }
-    
-    .contenedor-contenido h2 {
-        font-size: 2.8rem;
-    }
-    
-    .text-informacion {
-        font-size: 1.6rem;
-    }
-    
-    .titulo-inf-nutri {
-        font-size: 2.2rem;
-    }
-    
-    .item-nutricional {
-        font-size: 1.5rem;
-        padding: 1.2rem;
-    }
-    
-    .slogan {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .nombre-sitio {
-        font-size: 2.5rem;
-        padding: 1.5rem;
-    }
-    
-    .contenedor-contenido {
-        padding: 4rem 1.5rem;
-        margin: 2rem auto;
-    }
-    
-    .contenedor-contenido h2 {
-        font-size: 2.4rem;
-    }
-    
-    .contenedor-guias {
-        padding: 0 1rem;
-        gap: 3rem;
-    }
-    
-    .content-text-right {
-        padding: 2rem;
-    }
-    
-    .lista-footer {
-        padding: 1.5rem 2rem;
-    }
-}
-
-/* animaciones y efectos */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.contenedor-contenido,
-.contenedor-primer-bloque {
-    animation: fadeIn 0.8s ease-out;
-}
-
-.contenedor-primer-bloque:nth-child(2) {
-    animation-delay: 0.2s;
-}
 
 
 
@@ -709,93 +596,9 @@ header {
     font-size: 1.5rem;
 }
 
-/*RESPONSIVE PARA FRUTAS.HTML*/
-
-@media (max-width: 1200px) {
-    .contenedor-guias.frutas {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 900px;
-    }
-    
-    .info-general {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .encabezado-frutas {
-        padding: 2rem;
-        margin: 3rem auto 4rem auto;
-    }
-    
-    .titulo-seccion {
-        font-size: 2.8rem;
-    }
-    
-    .texto-introductorio {
-        font-size: 1.6rem;
-    }
-    
-    .contenedor-guias.frutas {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-        gap: 2.5rem;
-    }
-    
-    .bloque-fruta .titulo-inf-nutri {
-        font-size: 2rem;
-    }
-    
-    .descripcion-fruta p {
-        font-size: 1.4rem;
-    }
-    
-    .bloque-fruta .item-nutricional {
-        font-size: 1.3rem;
-    }
-    
-    .contenido-general {
-        padding: 3rem 2rem;
-    }
-    
-    .subtitulo-seccion {
-        font-size: 2.4rem;
-    }
-    
-    .info-general {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .info-columna {
-        padding: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .titulo-seccion {
-        font-size: 2.4rem;
-    }
-    
-    .bloque-fruta .img-inf-1,
-    .bloque-fruta .img-inf-2 {
-        height: 200px;
-    }
-    
-    .bloque-fruta .content-text-right {
-        padding: 2rem;
-    }
-    
-    .descripcion-fruta {
-        padding: 1.2rem;
-    }
-}
 
 
-/* ============================================
-   ESTILOS ESPECÍFICOS PARA ZONASCULTIVOS.HTML
-   (Diseño horizontal tipo mapa/regiones)
-============================================ */
+/*ESTILOS ESPECÍFICOS PARA ZONASCULTIVOS.HTML*/
 
 /* ENCABEZADO ESPECÍFICO PARA ZONAS */
 .encabezado-cultivos {
@@ -1014,121 +817,9 @@ header {
     margin-left: 1rem;
 }
 
-/* ============================================
-   RESPONSIVE PARA ZONASCULTIVOS.HTML
-============================================ */
-@media (max-width: 1200px) {
-    .zona-imagen {
-        min-width: 350px;
-        max-width: 400px;
-    }
-}
 
-@media (max-width: 992px) {
-    .zona-item {
-        flex-direction: column;
-        min-height: auto;
-    }
-    
-    .zona-imagen {
-        min-width: 100%;
-        max-width: 100%;
-        height: 300px;
-    }
-    
-    .zona-contenido {
-        padding: 2.5rem;
-    }
-    
-    .zona-titulo {
-        font-size: 2.2rem;
-    }
-    
-    .zona-detalles ul {
-        grid-template-columns: 1fr;
-    }
-}
 
-@media (max-width: 768px) {
-    .encabezado-cultivos {
-        padding: 2rem;
-        margin: 3rem auto 4rem auto;
-    }
-    
-    .encabezado-cultivos .titulo-seccion {
-        font-size: 2.8rem;
-    }
-    
-    .encabezado-cultivos .subtitulo-seccion {
-        font-size: 1.6rem;
-    }
-    
-    .intro-cultivos {
-        padding: 2rem;
-        margin-bottom: 4rem;
-    }
-    
-    .intro-cultivos p {
-        font-size: 1.5rem;
-    }
-    
-    .zona-imagen {
-        height: 250px;
-    }
-    
-    .zona-contenido {
-        padding: 2rem;
-    }
-    
-    .zona-titulo {
-        font-size: 2rem;
-    }
-    
-    .zona-descripcion p {
-        font-size: 1.5rem;
-    }
-    
-    .zona-detalles {
-        padding: 1.5rem;
-    }
-    
-    .zona-detalles h4 {
-        font-size: 1.6rem;
-    }
-    
-    .zona-detalles li {
-        font-size: 1.4rem;
-        padding: 1rem;
-    }
-    
-    .frase-cultivos {
-        padding: 3rem 2rem;
-        margin-top: 4rem;
-    }
-    
-    .frase-cultivos blockquote {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .encabezado-cultivos .titulo-seccion {
-        font-size: 2.4rem;
-    }
-    
-    .zona-imagen {
-        height: 200px;
-    }
-    
-    .frase-cultivos blockquote {
-        font-size: 1.6rem;
-    }
-}
-
-/* ============================================
-   ESTILOS ESPECÍFICOS PARA RECETAS.HTML
-   (Diseño tipo libro de cocina)
-============================================ */
+/*ESTILOS ESPECÍFICOS PARA RECETAS.HTML*/
 
 /* ENCABEZADO ESPECÍFICO PARA RECETAS */
 .encabezado-recetas {
@@ -1296,11 +987,7 @@ header {
     font-size: 2rem;
 }
 
-.receta-item:nth-child(1) .receta-titulo::before { content: "🍌"; }
-.receta-item:nth-child(2) .receta-titulo::before { content: "🍋"; }
-.receta-item:nth-child(3) .receta-titulo::before { content: "🥥"; }
-.receta-item:nth-child(4) .receta-titulo::before { content: "🥭"; }
-.receta-item:nth-child(5) .receta-titulo::before { content: "🍈"; }
+
 
 /* DESCRIPCIÓN DE LA RECETA */
 .receta-descripcion {
@@ -1336,7 +1023,6 @@ header {
 }
 
 .receta-ingredientes h4::before {
-    content: "🥄";
     font-size: 2rem;
 }
 
@@ -1421,113 +1107,4 @@ header {
     margin-left: 1rem;
 }
 
-/* ============================================
-   RESPONSIVE PARA RECETAS.HTML
-============================================ */
-@media (max-width: 1200px) {
-    .receta-imagen {
-        min-width: 280px;
-        max-width: 350px;
-    }
-}
 
-@media (max-width: 992px) {
-    .receta-item {
-        flex-direction: column;
-        min-height: auto;
-    }
-    
-    .receta-imagen {
-        min-width: 100%;
-        max-width: 100%;
-        height: 250px;
-    }
-    
-    .receta-contenido {
-        padding: 2.5rem;
-    }
-    
-    .receta-titulo {
-        font-size: 2.2rem;
-    }
-    
-    .receta-ingredientes ul {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .encabezado-recetas {
-        padding: 3rem 2rem;
-        margin: 3rem auto 4rem auto;
-    }
-    
-    .encabezado-recetas .titulo-seccion {
-        font-size: 2.8rem;
-    }
-    
-    .encabezado-recetas .subtitulo-seccion {
-        font-size: 1.6rem;
-    }
-    
-    .intro-recetas {
-        padding: 2.5rem 2rem;
-        margin-bottom: 4rem;
-    }
-    
-    .intro-recetas p {
-        font-size: 1.5rem;
-    }
-    
-    .receta-imagen {
-        height: 220px;
-    }
-    
-    .receta-contenido {
-        padding: 2rem;
-    }
-    
-    .receta-titulo {
-        font-size: 2rem;
-    }
-    
-    .receta-descripcion p {
-        font-size: 1.5rem;
-    }
-    
-    .receta-ingredientes {
-        padding: 1.5rem;
-    }
-    
-    .receta-ingredientes h4 {
-        font-size: 1.6rem;
-    }
-    
-    .receta-ingredientes li {
-        font-size: 1.4rem;
-        padding: 1rem 1rem 1rem 2.5rem;
-    }
-    
-    .frase-recetas {
-        padding: 3rem 2rem;
-        margin-top: 4rem;
-    }
-    
-    .frase-recetas blockquote {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .encabezado-recetas .titulo-seccion {
-        font-size: 2.4rem;
-    }
-    
-    .receta-imagen {
-        height: 200px;
-    }
-    
-    .frase-recetas blockquote {
-        font-size: 1.6rem;
-    }
-}

@@ -1,0 +1,1533 @@
+/*index.html*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/*encabezado de header*/
+
+header {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.fondo-header {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.nombre-titulo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nombre-titulo::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.nombre-sitio {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 4.5rem;
+    text-align: center;
+    padding: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+/* Navegación */
+
+.contenedor-navegacion {
+    background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navegacion-principal {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 1rem 0;
+}
+
+.enlace-menu {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.enlace-menu:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.enlace-menu::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: #FFEB3B;
+    transition: width 0.3s ease;
+}
+
+.enlace-menu:hover::after {
+    width: 70%;
+}
+
+
+/* Contenido principal */
+
+.contenedor-contenido {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin: 3rem auto;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+}
+
+.contenedor-contenido h2 {
+    font-size: 3.5rem;
+    color: #2E7D32;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.contenedor-contenido h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #FF9800;
+    border-radius: 2px;
+}
+
+.text-informacion {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+
+/* Bloques de información*/
+
+.contenedor-guias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    margin: 6rem auto;
+    max-width: 1400px;
+    padding: 0 2rem;
+}
+
+/* BLOQUE INDIVIDUAL */
+.contenedor-primer-bloque {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    display: flex;
+    height: 500px; /* Altura fija para consistencia */
+}
+
+.contenedor-primer-bloque:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGEN A LA IZQUIERDA */
+.contenedor-primer-bloque .img-inf-1,
+.contenedor-primer-bloque .img-inf-2 {
+    flex: 1;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.contenedor-primer-bloque:hover .img-inf-1,
+.contenedor-primer-bloque:hover .img-inf-2 {
+    transform: scale(1.05);
+}
+
+/* CONTENIDO A LA DERECHA */
+.contenedor-primer-bloque .content-text-right {
+    flex: 1;
+    width: 50%;
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* TÍTULO DEL BLOQUE */
+.titulo-inf-nutri {
+    font-size: 2.8rem;
+    color: #2E7D32;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid #FF9800;
+    text-align: center;
+    position: relative;
+}
+
+.titulo-inf-nutri::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #2E7D32;
+    border-radius: 2px;
+}
+
+/* LISTA DE VIÑETAS */
+.lista-viñetas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-nutricional {
+    background: white;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    border-left: 5px solid #FF9800;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    font-size: 1.7rem;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-nutricional::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: #2E7D32;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.item-nutricional:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(46, 125, 50, 0.15);
+}
+
+.item-nutricional:hover::before {
+    transform: scaleY(1);
+}
+
+.item-nutricional:last-child {
+    margin-bottom: 0;
+}
+
+/* ÍCONOS PARA LOS ITEMS (opcional) */
+.item-nutricional::after {
+    content: '✓';
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #2E7D32;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.item-nutricional:hover::after {
+    opacity: 1;
+}
+
+/* Footer */
+
+/* ============================================
+   FOOTER HORIZONTAL - SLOGAN ARRIBA
+============================================ */
+.site-footer {
+    background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+    color: white;
+    padding: 4rem 0 2rem 0;
+    margin-top: 6rem;
+    border-top: 5px solid #FFEB3B;
+}
+
+.contenedor-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* SLOGAN ARRIBA (centrado) */
+.slogan {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    font-style: italic;
+    color: #FFEB3B;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* LISTA HORIZONTAL DE INFORMACIÓN */
+.lista-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 4rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 2rem;
+}
+
+/* Cada grupo dt-dd */
+.lista-footer > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 150px;
+}
+
+.lista-footer dt {
+    font-weight: bold;
+    color: #FFEB3B;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.lista-footer dd {
+    margin: 0;
+    font-size: 1.6rem;
+    color: white;
+}
+
+/* diseño responsivo */
+
+@media (max-width: 1200px) {
+    .nombre-sitio {
+        font-size: 4rem;
+        padding: 2.5rem;
+    }
+    
+    .contenedor-guias {
+        grid-template-columns: 1fr;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+    
+    header {
+        height: 50vh;
+        min-height: 300px;
+    }
+    
+    .nombre-sitio {
+        font-size: 3rem;
+        padding: 2rem;
+    }
+    
+    .navegacion-principal {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .enlace-menu {
+        width: 80%;
+        text-align: center;
+    }
+    
+    .contenedor-contenido h2 {
+        font-size: 2.8rem;
+    }
+    
+    .text-informacion {
+        font-size: 1.6rem;
+    }
+    
+    .titulo-inf-nutri {
+        font-size: 2.2rem;
+    }
+    
+    .item-nutricional {
+        font-size: 1.5rem;
+        padding: 1.2rem;
+    }
+    
+    .slogan {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nombre-sitio {
+        font-size: 2.5rem;
+        padding: 1.5rem;
+    }
+    
+    .contenedor-contenido {
+        padding: 4rem 1.5rem;
+        margin: 2rem auto;
+    }
+    
+    .contenedor-contenido h2 {
+        font-size: 2.4rem;
+    }
+    
+    .contenedor-guias {
+        padding: 0 1rem;
+        gap: 3rem;
+    }
+    
+    .content-text-right {
+        padding: 2rem;
+    }
+    
+    .lista-footer {
+        padding: 1.5rem 2rem;
+    }
+}
+
+/* animaciones y efectos */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contenedor-contenido,
+.contenedor-primer-bloque {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.contenedor-primer-bloque:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+
+
+/*ESTILOS PARA FRUTAS.HTML*/
+
+/* ENCABEZADO ESPECÍFICO PARA FRUTAS */
+.encabezado-frutas {
+    text-align: center;
+    margin: 4rem auto 6rem auto;
+    padding: 3rem;
+    background: linear-gradient(135deg, #ffeb3b 0%, #ff9800 100%);
+    border-radius: 20px;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.2);
+}
+
+.titulo-seccion {
+    font-size: 3.5rem;
+    color: #2E7D32;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.texto-introductorio {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #5d4037;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* CONTENEDOR DE FRUTAS - GRID DE 3 COLUMNAS */
+.contenedor-guias.frutas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin: 4rem auto 6rem auto;
+    max-width: 1400px;
+}
+
+/* BLOQUE INDIVIDUAL DE FRUTA */
+.bloque-fruta {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.bloque-fruta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGEN DE LA FRUTA */
+.bloque-fruta .img-inf-1,
+.bloque-fruta .img-inf-2 {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.bloque-fruta:hover .img-inf-1,
+.bloque-fruta:hover .img-inf-2 {
+    transform: scale(1.05);
+}
+
+/* CONTENIDO DE LA FRUTA */
+.bloque-fruta .content-text-right {
+    flex: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.bloque-fruta .titulo-inf-nutri {
+    font-size: 2.2rem;
+    color: #e65100;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #ffb74d;
+    text-align: center;
+}
+
+/* DESCRIPCIÓN DE LA FRUTA */
+.descripcion-fruta {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #fff8e1;
+    border-radius: 10px;
+    border-left: 4px solid #ff9800;
+}
+
+.descripcion-fruta p {
+    margin: 0;
+    line-height: 1.6;
+    color: #5d4037;
+    font-size: 1.5rem;
+}
+
+/* LISTA DE CARACTERÍSTICAS PARA FRUTAS */
+.bloque-fruta .lista-viñetas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: auto;
+}
+
+.bloque-fruta .item-nutricional {
+    background: #f5f5f5;
+    padding: 1.2rem;
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    border-left: 3px solid #2E7D32;
+    font-size: 1.4rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.bloque-fruta .item-nutricional:hover {
+    background: #e8f5e9;
+    transform: translateX(5px);
+}
+
+.bloque-fruta .item-nutricional strong {
+    color: #2E7D32;
+    font-weight: 600;
+}
+
+.bloque-fruta .item-nutricional:last-child {
+    margin-bottom: 0;
+}
+
+/* SECCIÓN INFORMATIVA FINAL PARA FRUTAS */
+.contenido-general {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    padding: 4rem;
+    border-radius: 20px;
+    margin-top: 4rem;
+    box-shadow: 0 5px 20px rgba(46, 125, 50, 0.1);
+}
+
+.subtitulo-seccion {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #2E7D32;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.subtitulo-seccion::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #ff9800;
+    border-radius: 2px;
+}
+
+.info-general {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-columna {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.info-columna:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.info-columna h4 {
+    color: #e65100;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+
+.info-columna p {
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/*RESPONSIVE PARA FRUTAS.HTML*/
+
+@media (max-width: 1200px) {
+    .contenedor-guias.frutas {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+    }
+    
+    .info-general {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .encabezado-frutas {
+        padding: 2rem;
+        margin: 3rem auto 4rem auto;
+    }
+    
+    .titulo-seccion {
+        font-size: 2.8rem;
+    }
+    
+    .texto-introductorio {
+        font-size: 1.6rem;
+    }
+    
+    .contenedor-guias.frutas {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 2.5rem;
+    }
+    
+    .bloque-fruta .titulo-inf-nutri {
+        font-size: 2rem;
+    }
+    
+    .descripcion-fruta p {
+        font-size: 1.4rem;
+    }
+    
+    .bloque-fruta .item-nutricional {
+        font-size: 1.3rem;
+    }
+    
+    .contenido-general {
+        padding: 3rem 2rem;
+    }
+    
+    .subtitulo-seccion {
+        font-size: 2.4rem;
+    }
+    
+    .info-general {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .info-columna {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-seccion {
+        font-size: 2.4rem;
+    }
+    
+    .bloque-fruta .img-inf-1,
+    .bloque-fruta .img-inf-2 {
+        height: 200px;
+    }
+    
+    .bloque-fruta .content-text-right {
+        padding: 2rem;
+    }
+    
+    .descripcion-fruta {
+        padding: 1.2rem;
+    }
+}
+
+
+/* ============================================
+   ESTILOS ESPECÍFICOS PARA ZONASCULTIVOS.HTML
+   (Diseño horizontal tipo mapa/regiones)
+============================================ */
+
+/* ENCABEZADO ESPECÍFICO PARA ZONAS */
+.encabezado-cultivos {
+    text-align: center;
+    margin: 4rem auto 6rem auto;
+    padding: 3rem;
+    background: linear-gradient(135deg, #795548 0%, #5d4037 100%);
+    border-radius: 20px;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(93, 64, 55, 0.2);
+}
+
+.encabezado-cultivos .titulo-seccion {
+    font-size: 3.5rem;
+    color: #fff8e1;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.encabezado-cultivos .subtitulo-seccion {
+    font-size: 1.8rem;
+    color: #d7ccc8;
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+/* INTRODUCCIÓN PARA ZONAS */
+.intro-cultivos {
+    background: #efebe9;
+    padding: 3rem;
+    border-radius: 15px;
+    margin-bottom: 6rem;
+    border-left: 5px solid #795548;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.intro-cultivos p {
+    font-size: 1.7rem;
+    line-height: 1.8;
+    color: #5d4037;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.intro-cultivos p:last-child {
+    margin-bottom: 0;
+}
+
+/* CONTENEDOR PRINCIPAL DE ZONAS - DISEÑO HORIZONTAL */
+.zonas-cultivo {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin: 4rem auto;
+    max-width: 1200px;
+}
+
+/* ARTÍCULO DE ZONA - DISEÑO HORIZONTAL */
+.zona-item {
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    min-height: 350px;
+}
+
+.zona-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGEN DE LA ZONA - TAMAÑO FIJO */
+.zona-imagen {
+    flex: 1;
+    min-width: 400px;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+.img-zona {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.zona-item:hover .img-zona {
+    transform: scale(1.08);
+}
+
+/* CONTENIDO DE LA ZONA */
+.zona-contenido {
+    flex: 2;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+}
+
+/* TÍTULO DE LA ZONA */
+.zona-titulo {
+    font-size: 2.5rem;
+    color: #5d4037;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #8bc34a;
+    position: relative;
+}
+
+.zona-titulo::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: #795548;
+    border-radius: 2px;
+}
+
+/* DESCRIPCIÓN DE LA ZONA */
+.zona-descripcion {
+    margin-bottom: 3rem;
+    flex: 1;
+}
+
+.zona-descripcion p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #5d4037;
+    margin: 0;
+}
+
+/* DETALLES DE REGIONES */
+.zona-detalles {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid #d7ccc8;
+}
+
+.zona-detalles h4 {
+    font-size: 1.8rem;
+    color: #795548;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.zona-detalles h4::before {
+    content: "📍";
+    font-size: 2rem;
+}
+
+.zona-detalles ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.zona-detalles li {
+    background: #f5f5f5;
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #8bc34a;
+    font-size: 1.5rem;
+    color: #5d4037;
+    transition: all 0.3s ease;
+}
+
+.zona-detalles li:hover {
+    background: #e8f5e9;
+    transform: translateX(5px);
+}
+
+/* FRASE FINAL PARA ZONAS */
+.frase-cultivos {
+    text-align: center;
+    padding: 4rem;
+    background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+    border-radius: 20px;
+    margin-top: 6rem;
+    box-shadow: 0 10px 30px rgba(104, 159, 56, 0.2);
+}
+
+.frase-cultivos blockquote {
+    margin: 0;
+    font-size: 2.2rem;
+    color: white;
+    font-style: italic;
+    quotes: "«" "»" "‹" "›";
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.frase-cultivos blockquote::before {
+    content: open-quote;
+    font-size: 4rem;
+    color: #fff8e1;
+    margin-right: 1rem;
+}
+
+.frase-cultivos blockquote::after {
+    content: close-quote;
+    font-size: 4rem;
+    color: #fff8e1;
+    margin-left: 1rem;
+}
+
+/* ============================================
+   RESPONSIVE PARA ZONASCULTIVOS.HTML
+============================================ */
+@media (max-width: 1200px) {
+    .zona-imagen {
+        min-width: 350px;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    .zona-item {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .zona-imagen {
+        min-width: 100%;
+        max-width: 100%;
+        height: 300px;
+    }
+    
+    .zona-contenido {
+        padding: 2.5rem;
+    }
+    
+    .zona-titulo {
+        font-size: 2.2rem;
+    }
+    
+    .zona-detalles ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .encabezado-cultivos {
+        padding: 2rem;
+        margin: 3rem auto 4rem auto;
+    }
+    
+    .encabezado-cultivos .titulo-seccion {
+        font-size: 2.8rem;
+    }
+    
+    .encabezado-cultivos .subtitulo-seccion {
+        font-size: 1.6rem;
+    }
+    
+    .intro-cultivos {
+        padding: 2rem;
+        margin-bottom: 4rem;
+    }
+    
+    .intro-cultivos p {
+        font-size: 1.5rem;
+    }
+    
+    .zona-imagen {
+        height: 250px;
+    }
+    
+    .zona-contenido {
+        padding: 2rem;
+    }
+    
+    .zona-titulo {
+        font-size: 2rem;
+    }
+    
+    .zona-descripcion p {
+        font-size: 1.5rem;
+    }
+    
+    .zona-detalles {
+        padding: 1.5rem;
+    }
+    
+    .zona-detalles h4 {
+        font-size: 1.6rem;
+    }
+    
+    .zona-detalles li {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+    
+    .frase-cultivos {
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+    }
+    
+    .frase-cultivos blockquote {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .encabezado-cultivos .titulo-seccion {
+        font-size: 2.4rem;
+    }
+    
+    .zona-imagen {
+        height: 200px;
+    }
+    
+    .frase-cultivos blockquote {
+        font-size: 1.6rem;
+    }
+}
+
+/* ============================================
+   ESTILOS ESPECÍFICOS PARA RECETAS.HTML
+   (Diseño tipo libro de cocina)
+============================================ */
+
+/* ENCABEZADO ESPECÍFICO PARA RECETAS */
+.encabezado-recetas {
+    text-align: center;
+    margin: 4rem auto 6rem auto;
+    padding: 4rem;
+    background: linear-gradient(135deg, #ff7043 0%, #d84315 100%);
+    border-radius: 20px;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(216, 67, 21, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.encabezado-recetas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: cover;
+}
+
+.encabezado-recetas .titulo-seccion {
+    font-size: 3.5rem;
+    color: #fff8e1;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.encabezado-recetas .subtitulo-seccion {
+    font-size: 1.8rem;
+    color: #ffccbc;
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+/* INTRODUCCIÓN PARA RECETAS */
+.intro-recetas {
+    background: #fff8e1;
+    padding: 3rem;
+    border-radius: 15px;
+    margin-bottom: 6rem;
+    border: 3px solid #ffcc80;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.intro-recetas::before {
+    content: "📖";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff7043;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.intro-recetas p {
+    font-size: 1.7rem;
+    line-height: 1.8;
+    color: #5d4037;
+    margin: 0;
+    text-align: center;
+}
+
+/* CONTENEDOR PRINCIPAL DE RECETAS */
+.lista-recetas {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin: 4rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+/* ARTÍCULO DE RECETA - DISEÑO HORIZONTAL CON IMAGEN PEQUEÑA */
+.receta-item {
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    min-height: 300px;
+    border: 2px solid #ffcc80;
+}
+
+.receta-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGEN DE LA RECETA - TAMAÑO MEDIANO */
+.receta-imagen {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.receta-imagen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 112, 67, 0.1), rgba(255, 204, 128, 0.1));
+    z-index: 1;
+}
+
+.img-receta {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.receta-item:hover .img-receta {
+    transform: scale(1.1);
+}
+
+/* CONTENIDO DE LA RECETA */
+.receta-contenido {
+    flex: 2;
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fffaf0;
+}
+
+/* TÍTULO DE LA RECETA */
+.receta-titulo {
+    font-size: 2.5rem;
+    color: #d84315;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #ff7043;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.receta-titulo::before {
+    font-size: 2rem;
+}
+
+.receta-item:nth-child(1) .receta-titulo::before { content: "🍌"; }
+.receta-item:nth-child(2) .receta-titulo::before { content: "🍋"; }
+.receta-item:nth-child(3) .receta-titulo::before { content: "🥥"; }
+.receta-item:nth-child(4) .receta-titulo::before { content: "🥭"; }
+.receta-item:nth-child(5) .receta-titulo::before { content: "🍈"; }
+
+/* DESCRIPCIÓN DE LA RECETA */
+.receta-descripcion {
+    margin-bottom: 3rem;
+    flex: 1;
+}
+
+.receta-descripcion p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #5d4037;
+    margin: 0;
+    padding-left: 1rem;
+    border-left: 3px solid #ffcc80;
+}
+
+/* INGREDIENTES DE LA RECETA */
+.receta-ingredientes {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid #ffcc80;
+}
+
+.receta-ingredientes h4 {
+    font-size: 1.8rem;
+    color: #ff7043;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.receta-ingredientes h4::before {
+    content: "🥄";
+    font-size: 2rem;
+}
+
+.receta-ingredientes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.receta-ingredientes li {
+    background: #fff8e1;
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #ff7043;
+    font-size: 1.5rem;
+    color: #5d4037;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 3rem;
+}
+
+.receta-ingredientes li::before {
+    content: "✓";
+    position: absolute;
+    left: 1rem;
+    color: #ff7043;
+    font-weight: bold;
+}
+
+.receta-ingredientes li:hover {
+    background: #ffe0b2;
+    transform: translateX(5px);
+}
+
+/* FRASE FINAL PARA RECETAS */
+.frase-recetas {
+    text-align: center;
+    padding: 4rem;
+    background: linear-gradient(135deg, #ffcc80 0%, #ffb74d 100%);
+    border-radius: 20px;
+    margin-top: 6rem;
+    box-shadow: 0 10px 30px rgba(255, 179, 77, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.frase-recetas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><pattern id="pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.3)"/></pattern><rect width="100" height="100" fill="url(%23pattern)"/></svg>');
+}
+
+.frase-recetas blockquote {
+    margin: 0;
+    font-size: 2.2rem;
+    color: #5d4037;
+    font-style: italic;
+    quotes: "«" "»" "‹" "›";
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.frase-recetas blockquote::before {
+    content: open-quote;
+    font-size: 4rem;
+    color: #ff7043;
+    margin-right: 1rem;
+}
+
+.frase-recetas blockquote::after {
+    content: close-quote;
+    font-size: 4rem;
+    color: #ff7043;
+    margin-left: 1rem;
+}
+
+/* ============================================
+   RESPONSIVE PARA RECETAS.HTML
+============================================ */
+@media (max-width: 1200px) {
+    .receta-imagen {
+        min-width: 280px;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 992px) {
+    .receta-item {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .receta-imagen {
+        min-width: 100%;
+        max-width: 100%;
+        height: 250px;
+    }
+    
+    .receta-contenido {
+        padding: 2.5rem;
+    }
+    
+    .receta-titulo {
+        font-size: 2.2rem;
+    }
+    
+    .receta-ingredientes ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .encabezado-recetas {
+        padding: 3rem 2rem;
+        margin: 3rem auto 4rem auto;
+    }
+    
+    .encabezado-recetas .titulo-seccion {
+        font-size: 2.8rem;
+    }
+    
+    .encabezado-recetas .subtitulo-seccion {
+        font-size: 1.6rem;
+    }
+    
+    .intro-recetas {
+        padding: 2.5rem 2rem;
+        margin-bottom: 4rem;
+    }
+    
+    .intro-recetas p {
+        font-size: 1.5rem;
+    }
+    
+    .receta-imagen {
+        height: 220px;
+    }
+    
+    .receta-contenido {
+        padding: 2rem;
+    }
+    
+    .receta-titulo {
+        font-size: 2rem;
+    }
+    
+    .receta-descripcion p {
+        font-size: 1.5rem;
+    }
+    
+    .receta-ingredientes {
+        padding: 1.5rem;
+    }
+    
+    .receta-ingredientes h4 {
+        font-size: 1.6rem;
+    }
+    
+    .receta-ingredientes li {
+        font-size: 1.4rem;
+        padding: 1rem 1rem 1rem 2.5rem;
+    }
+    
+    .frase-recetas {
+        padding: 3rem 2rem;
+        margin-top: 4rem;
+    }
+    
+    .frase-recetas blockquote {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .encabezado-recetas .titulo-seccion {
+        font-size: 2.4rem;
+    }
+    
+    .receta-imagen {
+        height: 200px;
+    }
+    
+    .frase-recetas blockquote {
+        font-size: 1.6rem;
+    }
+}

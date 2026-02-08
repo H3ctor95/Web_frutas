@@ -95,3 +95,5 @@ No se requiere servidor ni instalación de dependencias; es solo HTML y CSS.
 ## Licencia
 
 © 2026 Veliz — Proyecto académico. Todos los derechos reservados.
+
+https://github.com/H3ctor95/Web_frutas.git

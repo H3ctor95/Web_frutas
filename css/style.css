@@ -907,8 +907,80 @@ header {
     flex-direction: column;
     gap: 4rem;
     margin: 4rem auto;
-    max-width: 1200px;
+    max-width: 1400px;
     padding: 0 2rem;
+}
+
+/* Mosaico: receta 2 y 3 lado a lado (izquierda / derecha), bloque más ancho */
+.recetas-mosaico {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Dentro de cada receta del mosaico: imagen a la izquierda, información a la derecha */
+.recetas-mosaico .receta-mosaico-item {
+    flex-direction: row;
+    min-height: 340px;
+    display: flex;
+}
+
+.recetas-mosaico .receta-mosaico-item .receta-imagen {
+    flex: 0 0 38%;
+    min-width: 200px;
+    max-width: 320px;
+    height: auto;
+    min-height: 340px;
+}
+
+.recetas-mosaico .receta-mosaico-item .receta-contenido {
+    flex: 1;
+    padding: 2.2rem 2.5rem;
+    min-width: 0;
+}
+
+.recetas-mosaico .receta-mosaico-item .receta-titulo {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.recetas-mosaico .receta-mosaico-item .receta-descripcion {
+    margin-bottom: 1.5rem;
+}
+
+.recetas-mosaico .receta-mosaico-item .receta-descripcion p {
+    font-size: 1.45rem;
+    line-height: 1.6;
+}
+
+.recetas-mosaico .receta-mosaico-item .receta-ingredientes {
+    padding: 1.4rem;
+}
+
+.recetas-mosaico .receta-mosaico-item .receta-ingredientes h4 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.recetas-mosaico .receta-mosaico-item .receta-ingredientes ul {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+}
+
+.recetas-mosaico .receta-mosaico-item .receta-ingredientes li {
+    font-size: 1.35rem;
+    padding: 0.8rem 1rem 0.8rem 2.6rem;
+}
+
+@media (max-width: 900px) {
+    .recetas-mosaico {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
 }
 
 /* ARTÍCULO DE RECETA - DISEÑO HORIZONTAL CON IMAGEN PEQUEÑA */
@@ -926,6 +998,11 @@ header {
 .receta-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Receta con imagen a la derecha */
+.receta-item.receta-imagen-derecha {
+    flex-direction: row-reverse;
 }
 
 /* IMAGEN DE LA RECETA - TAMAÑO MEDIANO */

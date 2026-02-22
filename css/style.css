@@ -100,6 +100,44 @@ header {
     z-index: 1000;
 }
 
+/* Botón hamburguesa - oculto en desktop */
+.btn-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    z-index: 1001;
+    position: relative;
+}
+
+.btn-menu span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: white;
+    margin: 6px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-menu.menu-abierto span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.btn-menu.menu-abierto span:nth-child(2) {
+    opacity: 0;
+}
+
+.btn-menu.menu-abierto span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Overlay oculto en desktop */
+.overlay-menu {
+    display: none;
+}
+
 .navegacion-principal {
     display: flex;
     justify-content: center;
@@ -228,11 +266,14 @@ header {
 .contenedor-primer-bloque .content-text-right {
     flex: 1;
     width: 50%;
+    min-width: 0;
     padding: 4rem 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* TÍTULO DEL BLOQUE */
@@ -244,6 +285,7 @@ header {
     border-bottom: 3px solid #FF9800;
     text-align: center;
     position: relative;
+    flex-shrink: 0;
 }
 
 .titulo-inf-nutri::after {
@@ -263,12 +305,17 @@ header {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 0;
+    overflow: visible;
 }
 
 .item-nutricional {
     background: white;
     padding: 1.8rem 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     border-radius: 12px;
     border-left: 5px solid #FF9800;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
@@ -354,26 +401,19 @@ header {
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-/* LISTA HORIZONTAL DE INFORMACIÓN */
+/* LISTA HORIZONTAL DE INFORMACIÓN - Grid para dt/dd en pares */
 .lista-footer {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 6rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 3rem;
     background: rgba(255, 255, 255, 0.1);
-    padding: 2.5rem 4rem;
+    padding: 2.5rem 3rem;
     border-radius: 15px;
     backdrop-filter: blur(10px);
     margin-bottom: 2rem;
-}
-
-/* Cada grupo dt-dd */
-.lista-footer > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-items: center;
     text-align: center;
-    min-width: 150px;
 }
 
 .lista-footer dt {
@@ -381,13 +421,20 @@ header {
     color: #FFEB3B;
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
+    grid-row: 1;
 }
 
 .lista-footer dd {
     margin: 0;
     font-size: 1.6rem;
     color: white;
+    grid-row: 2;
 }
+
+.lista-footer dt:nth-of-type(1), .lista-footer dd:nth-of-type(1) { grid-column: 1; }
+.lista-footer dt:nth-of-type(2), .lista-footer dd:nth-of-type(2) { grid-column: 2; }
+.lista-footer dt:nth-of-type(3), .lista-footer dd:nth-of-type(3) { grid-column: 3; }
+.lista-footer dt:nth-of-type(4), .lista-footer dd:nth-of-type(4) { grid-column: 4; }
 
 
 
@@ -1184,4 +1231,612 @@ header {
     margin-left: 1rem;
 }
 
+
+/* 
+   MOBILE-FIRST: Estilos base para móvil (0-767px) */
+
+/* Ajustes móvil para index.html */
+@media (max-width: 767px) {
+    header {
+        height: 40vh;
+        min-height: 280px;
+        max-height: 400px;
+    }
+
+    .nombre-sitio {
+        font-size: 2.2rem;
+        padding: 1.5rem;
+    }
+
+    .nombre-titulo::before {
+        width: 95%;
+        height: 70%;
+    }
+
+    /* Contenedor nav con botón hamburguesa */
+    .contenedor-navegacion {
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .btn-menu {
+        display: block;
+    }
+
+    .navegacion-principal {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: linear-gradient(180deg, #2E7D32 0%, #1B5E20 100%);
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 5rem 0 2rem 0;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    .navegacion-principal.nav-abierto {
+        right: 0;
+    }
+
+    .enlace-menu {
+        font-size: 1.5rem;
+        padding: 1.2rem 2rem;
+        width: 100%;
+        text-align: left;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    body.menu-activo {
+        overflow: hidden;
+    }
+
+    /* Overlay oscuro al abrir menú */
+    .overlay-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .overlay-menu.overlay-visible {
+        display: block;
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .contenedor-contenido {
+        padding: 3rem 1.5rem;
+        margin: 2rem 1rem;
+    }
+
+    .contenedor-contenido h2 {
+        font-size: 2.4rem;
+    }
+
+    .text-informacion {
+        font-size: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    /* Bloques en columna en móvil */
+    .contenedor-guias {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 3rem 1rem;
+        padding: 0 1rem;
+    }
+
+    .contenedor-primer-bloque {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+    }
+
+    .contenedor-primer-bloque .img-inf-1,
+    .contenedor-primer-bloque .img-inf-2 {
+        width: 100%;
+        height: 200px;
+        flex: none;
+    }
+
+    .contenedor-primer-bloque .content-text-right {
+        width: 100%;
+        padding: 2rem 1.5rem;
+        overflow: visible;
+    }
+
+    .titulo-inf-nutri {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .item-nutricional {
+        padding: 1.2rem 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .lista-viñetas {
+        gap: 0.8rem;
+    }
+
+    /* Footer móvil - grid 2x2 para mejor distribución */
+    .slogan {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .lista-footer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 2rem;
+        padding: 1.5rem 2rem;
+    }
+
+    .lista-footer dt:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+    .lista-footer dd:nth-of-type(1) { grid-column: 1; grid-row: 2; }
+    .lista-footer dt:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+    .lista-footer dd:nth-of-type(2) { grid-column: 2; grid-row: 2; }
+    .lista-footer dt:nth-of-type(3) { grid-column: 1; grid-row: 3; }
+    .lista-footer dd:nth-of-type(3) { grid-column: 1; grid-row: 4; }
+    .lista-footer dt:nth-of-type(4) { grid-column: 2; grid-row: 3; }
+    .lista-footer dd:nth-of-type(4) { grid-column: 2; grid-row: 4; }
+
+    .lista-footer dt,
+    .lista-footer dd {
+        font-size: 1.5rem;
+    }
+
+    /* Frutas móvil */
+    .encabezado-frutas {
+        margin: 2rem 1rem 4rem;
+        padding: 2rem;
+    }
+
+    .titulo-seccion {
+        font-size: 2.4rem;
+    }
+
+    .texto-introductorio {
+        font-size: 1.5rem;
+    }
+
+    .contenedor-guias.frutas {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 2rem 1rem;
+    }
+
+    .bloque-fruta .titulo-inf-nutri {
+        font-size: 1.8rem;
+    }
+
+    .info-general {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contenido-general {
+        padding: 2rem;
+    }
+
+    .subtitulo-seccion {
+        font-size: 2.2rem;
+    }
+
+    /* Zonas móvil */
+    .encabezado-cultivos {
+        margin: 2rem 1rem 4rem;
+        padding: 2rem;
+    }
+
+    .intro-cultivos {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .zona-item {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .zona-imagen {
+        min-width: 100%;
+        max-width: 100%;
+        height: 220px;
+    }
+
+    .zona-contenido {
+        padding: 2rem;
+    }
+
+    .zona-titulo {
+        font-size: 2rem;
+    }
+
+    .zona-detalles ul {
+        grid-template-columns: 1fr;
+    }
+
+    .frase-cultivos {
+        padding: 2rem;
+        margin-top: 3rem;
+    }
+
+    .frase-cultivos blockquote {
+        font-size: 1.6rem;
+    }
+
+    /* Recetas móvil */
+    .encabezado-recetas {
+        margin: 2rem 1rem 4rem;
+        padding: 2rem;
+    }
+
+    .intro-recetas {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .receta-item {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .receta-item.receta-imagen-derecha {
+        flex-direction: column;
+    }
+
+    .receta-imagen {
+        min-width: 100%;
+        max-width: 100%;
+        height: 220px;
+    }
+
+    .receta-contenido {
+        padding: 2rem;
+    }
+
+    .receta-titulo {
+        font-size: 2rem;
+    }
+
+    .receta-descripcion {
+        margin-bottom: 1rem;
+        flex: none;
+    }
+
+    .receta-contenido {
+        justify-content: flex-start;
+        gap: 0;
+    }
+
+    .receta-ingredientes {
+        margin-top: 0;
+    }
+
+    .receta-ingredientes ul {
+        grid-template-columns: 1fr;
+    }
+
+    .recetas-mosaico {
+        grid-template-columns: 1fr;
+    }
+
+    .recetas-mosaico .receta-mosaico-item {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .recetas-mosaico .receta-mosaico-item .receta-descripcion {
+        margin-bottom: 1rem;
+    }
+
+    .recetas-mosaico .receta-mosaico-item .receta-contenido {
+        justify-content: flex-start;
+    }
+
+    .recetas-mosaico .receta-mosaico-item .receta-imagen {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 160px;
+        height: 160px;
+    }
+
+    .receta-imagen {
+        height: 160px;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .frase-recetas blockquote {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* ============================================
+   TABLET ESTRECHO: 768px - 900px (bloques en columna)
+   ============================================ */
+
+@media (min-width: 768px) and (max-width: 900px) {
+    .btn-menu {
+        display: none;
+    }
+
+    .contenedor-navegacion {
+        display: block;
+        padding: 1rem 0;
+    }
+
+    .navegacion-principal {
+        position: static;
+        width: auto;
+        max-width: none;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        box-shadow: none;
+    }
+
+    .enlace-menu {
+        width: auto;
+        text-align: center;
+        border-radius: 10px;
+        border-bottom: none;
+        font-size: 1.6rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .contenedor-guias {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-primer-bloque {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+    }
+
+    .contenedor-primer-bloque .img-inf-1,
+    .contenedor-primer-bloque .img-inf-2 {
+        width: 100%;
+        height: 220px;
+        flex: none;
+    }
+
+    .contenedor-primer-bloque .content-text-right {
+        width: 100%;
+        padding: 2rem 2rem;
+    }
+
+    .titulo-inf-nutri {
+        font-size: 2.2rem;
+    }
+
+    /* Footer 2 columnas en tablet estrecho */
+    .lista-footer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 2rem;
+    }
+
+    .lista-footer dt:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+    .lista-footer dd:nth-of-type(1) { grid-column: 1; grid-row: 2; }
+    .lista-footer dt:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+    .lista-footer dd:nth-of-type(2) { grid-column: 2; grid-row: 2; }
+    .lista-footer dt:nth-of-type(3) { grid-column: 1; grid-row: 3; }
+    .lista-footer dd:nth-of-type(3) { grid-column: 1; grid-row: 4; }
+    .lista-footer dt:nth-of-type(4) { grid-column: 2; grid-row: 3; }
+    .lista-footer dd:nth-of-type(4) { grid-column: 2; grid-row: 4; }
+
+    /* Recetas: imágenes más pequeñas */
+    .receta-imagen {
+        min-width: 200px;
+        max-width: 260px;
+    }
+
+    .recetas-mosaico .receta-mosaico-item .receta-imagen {
+        min-width: 150px;
+        max-width: 220px;
+    }
+}
+
+
+/* ============================================
+   TABLET-FIRST: Estilos para tablet (901px - 1023px)
+   ============================================ */
+
+@media (min-width: 901px) and (max-width: 1023px) {
+    header {
+        height: 50vh;
+        min-height: 350px;
+        max-height: 500px;
+    }
+
+    .nombre-sitio {
+        font-size: 3.2rem;
+        padding: 2rem;
+    }
+
+    .btn-menu {
+        display: none;
+    }
+
+    .contenedor-navegacion {
+        display: block;
+        padding: 1rem 0;
+    }
+
+    .navegacion-principal {
+        position: static;
+        width: auto;
+        max-width: none;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        box-shadow: none;
+    }
+
+    .enlace-menu {
+        width: auto;
+        text-align: center;
+        border-radius: 10px;
+        border-bottom: none;
+        font-size: 1.6rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .contenedor-contenido {
+        padding: 4rem 2rem;
+        margin: 2.5rem auto;
+    }
+
+    .contenedor-contenido h2 {
+        font-size: 3rem;
+    }
+
+    .text-informacion {
+        font-size: 1.6rem;
+    }
+
+    /* Bloques: fila en tablet ancho */
+    .contenedor-guias {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin: 4rem auto;
+        padding: 0 2rem;
+    }
+
+    .contenedor-primer-bloque {
+        flex-direction: row;
+        height: 400px;
+    }
+
+    .contenedor-primer-bloque .img-inf-1,
+    .contenedor-primer-bloque .img-inf-2 {
+        width: 42%;
+        height: 100%;
+        flex: 0 0 42%;
+    }
+
+    .contenedor-primer-bloque .content-text-right {
+        width: 58%;
+        padding: 2.5rem 2rem;
+        overflow: visible;
+    }
+
+    .titulo-inf-nutri {
+        font-size: 2.4rem;
+    }
+
+    .item-nutricional {
+        font-size: 1.5rem;
+    }
+
+    /* Footer tablet */
+    .slogan {
+        font-size: 2.2rem;
+    }
+
+    .lista-footer {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 2rem 3rem;
+    }
+
+    /* Frutas: 2 columnas en tablet */
+    .contenedor-guias.frutas {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    .info-general {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    /* Zonas tablet */
+    .zona-item {
+        flex-direction: row;
+    }
+
+    .zona-imagen {
+        min-width: 300px;
+        max-width: 380px;
+    }
+
+    .zona-detalles ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Recetas tablet */
+    .recetas-mosaico {
+        grid-template-columns: 1fr;
+    }
+
+    .receta-item {
+        flex-direction: row;
+    }
+
+    .receta-item.receta-imagen-derecha {
+        flex-direction: row-reverse;
+    }
+
+    .receta-imagen {
+        min-width: 250px;
+        max-width: 320px;
+    }
+
+    .recetas-mosaico .receta-mosaico-item {
+        flex-direction: row;
+    }
+
+    .recetas-mosaico .receta-mosaico-item .receta-imagen {
+        flex: 0 0 35%;
+        min-width: 180px;
+        max-width: 280px;
+    }
+}
+
+
+/* ============================================
+   DESKTOP: Estilos para pantallas grandes (1024px+)
+   Los estilos base ya definen el layout desktop
+   ============================================ */
+
+@media (min-width: 1024px) {
+    /* Asegurar que el layout desktop se aplique correctamente */
+    .contenedor-guias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenedor-guias.frutas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .info-general {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .recetas-mosaico {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 

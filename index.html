@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <meta charset="UFT-8">
-        <meta name="viewport" content="width=device-width, initial-scale.0">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,13 @@
             </div>
         </header>
 
+        <div id="overlay-menu" class="overlay-menu" aria-hidden="true"></div>
         <div class="contenedor-navegacion">
+            <button class="btn-menu" id="btn-menu" type="button" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="navegacion-principal contenedor">
                 <a class="enlace-menu" href="index.html">Inicio</a>
                 <a class="enlace-menu" href="frutas/Frutas.html">Frutas</a>
@@ -35,58 +41,13 @@
         <!-- bloques de información -->
         <div class="contenedor-guias">
 
-            <!-- Primer Blque -->
+            <!-- Primer Bloque -->
             <div class="contenedor-primer-bloque">
-                <img src="img/fondoInf1.png" alt="Fondo de primer bloque"class="img-inf-1">
+                <img src="img/fondoInf1.png" alt="Fondo de primer bloque" class="img-inf-1">
                 <div class="content-text-right">
-                    <h3 class="titulo-inf-nutri">Información Nutriciónal</h3>
+                    <h3 class="titulo-inf-nutri">Información Nutricional</h3>
                     <ul class="lista-viñetas">
 
                         <li class="item-nutricional">Aporte de vitaminas</li>
-                        <li class="item-nutricional">Fuente natural de energia</li>
-                        <li class="item-nutricional">Contenido de fibra</li>
-                        <li class="item-nutricional">Beneficios</li>
-                        <li class="item-nutricional">Hidratación del cuerpo</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Segundo Bloque -->
-            <div class="contenedor-primer-bloque">
-                <img src="img/fondoInf2.png" alt="Fondo de segundo bloque"class="img-inf-2">
-                <div class"content-text-right">
-                    <h3 class="titulo-inf-nutri">Consejos y Salud</h3>
-                    <ul class="lista-viñetas">
-
-                        <li class="item-nutricional">Incluir frutas en todas las etapas del día</li>
-                        <li class="item-nutricional">Consumir frutas naturales en lugar de procesadas</li>
-                        <li class="item-nutricional">Aprovechar sus antioxidantes naturales</li>
-                        <li class="item-nutricional">Mantener una alimentación variada</li>
-                        <li class="item-nutricional">Consultar porciones adecuadas según la edad</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-
-        <footer class="site-footer">
-            <div class="contenedor-footer">
-                <p class="slogan">"Naturaleza, sabor y salud en cada fruta."</p>
-
-                <dl class="lista-footer">
-                    <dt>Proyecto:</dt>
-                    <dd>Página de frutas</dd>
-
-                    <dt>Estudiante:</dt>
-                    <dd>Veliz</dd>
-
-                    <dt>Curso:</dt>
-                    <dd>Desarrollo Web</dd>
-
-                    <dt>Año:</dt>
-                    <dd>2026</dd>
-                </dl>
-            </div>
-        </footer>
-    </body>
-</html>
+                        <li class="item-nutricional">Fuente natural de energía</li>
+        

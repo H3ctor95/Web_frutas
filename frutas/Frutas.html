@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,233 +7,171 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <title>Frutas Tropicales - Tipos de Frutas</title>
+    <title>Frutas Tropicales - Recetas</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <img src="../img/fondo2.png" alt="Fondo presentación frutas tropicales" class="fondo-header">
+        <img src="../img/fondo.png" alt="Fondo presentación frutas tropicales" class="fondo-header">
         <div class="nombre-titulo">
             <h1 class="nombre-sitio">Frutas Tropicales de Guatemala</h1>
         </div>
     </header>
 
+    <!-- Overlay para menú móvil -->
+    <div id="overlay-menu" class="overlay-menu" aria-hidden="true"></div>
     <!-- Navegación -->
     <div class="contenedor-navegacion">
+        <button class="btn-menu" id="btn-menu" type="button" aria-label="Abrir menú de navegación">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav class="navegacion-principal contenedor">
             <a class="enlace-menu" href="../index.html">Inicio</a>
-            <a class="enlace-menu" href="Frutas.html">Frutas</a>
+            <a class="enlace-menu" href="../frutas/Frutas.html">Frutas</a>
             <a class="enlace-menu" href="../zonas/ZonaCultivos.html">Zonas de Cultivos</a> 
-            <a class="enlace-menu" href="../recetas/Recetas.html">Recetas</a>
+            <a class="enlace-menu" href="Recetas.html">Recetas</a>
         </nav>
     </div>
 
-    <!-- Sección Frutas - Contenido Principal -->
+    <!-- Contenido Principal -->
     <main class="contenedor">
         
-        <!-- Encabezado Sección Frutas -->
-        <section class="encabezado-frutas">
-            <h2 class="titulo-seccion">Frutas Tropicales Costeras</h2>
-            <p class="texto-introductorio">
-                Conoce las principales frutas tropicales de Guatemala, sus características 
-                y beneficios para la salud. Cada fruta presenta un sabor y propiedades únicas.
-            </p>
+        <!-- Encabezado Sección Recetas -->
+        <section class="encabezado-recetas">
+            <h2 class="titulo-seccion">Recetas con Frutas Tropicales</h2>
+            <p class="subtitulo-seccion">Formas sencillas y tradicionales de disfrutar las frutas de Guatemala.</p>
         </section>
 
-        <!-- Bloques de Frutas Individuales -->
-        <div class="contenedor-guias frutas">
-		
-		<!-- BLOQUE 1: BANANO -->
-            <div class="bloque-fruta">
-                <img src="../img/banano.png" alt="Banano tropical" class="img-inf-1">
-                <div class="content-text-right">
-                    <h3 class="titulo-inf-nutri">Banano</h3>
-                    <div class="descripcion-fruta">
-                        <p>El banano es una fruta tropical muy consumida en Guatemala, especialmente en zonas costeras. Es rico en vitamina B6, vitamina C y potasio, lo que ayuda al funcionamiento muscular y aporta energía natural al cuerpo. Es fácil de digerir y muy común en la alimentación diaria.</p>
+        <!-- Contenido introductorio -->
+        <section class="intro-recetas">
+            <p>Las frutas tropicales no solo se consumen frescas, también son la base de muchas recetas tradicionales y bebidas refrescantes. En esta sección se presentan algunas recetas simples elaboradas con frutas comunes de las zonas costeras de Guatemala, ideales para disfrutar en cualquier momento del día.</p>
+        </section>
+
+        <!-- Lista de Recetas -->
+        <section class="lista-recetas">
+            
+            <!-- Receta 1: Licuado de banano -->
+            <article class="receta-item">
+                <div class="receta-imagen">
+                    <img src="../img/receta-banano.png" alt="Licuado de banano" class="img-receta">
+                </div>
+                <div class="receta-contenido">
+                    <h3 class="receta-titulo">Licuado de banano</h3>
+                    <div class="receta-descripcion">
+                        <p>El licuado de banano es una bebida nutritiva y fácil de preparar. El banano aporta energía natural, potasio y vitaminas del complejo B. Es ideal para el desayuno o como bebida refrescante durante el día.</p>
                     </div>
-                    <ul class="lista-viñetas">
-                        <li class="item-nutricional"><strong>Característica:</strong> Rica en potasio y energía</li>
-                        <li class="item-nutricional"><strong>Sabor:</strong> Dulce y cremoso</li>
-                        <li class="item-nutricional"><strong>Temporada:</strong> Todo el año</li>
-                        <li class="item-nutricional"><strong>Beneficio:</strong> Mejora la digestión</li>
-                        <li class="item-nutricional"><strong>Vitamina:</strong> Alto contenido en B6</li>
-                        <li class="item-nutricional"><strong>Uso común:</strong> Consumo directo, batidos</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- BLOQUE 2: PLÁTANO -->
-            <div class="bloque-fruta">
-                <img src="../img/platano.png" alt="Plátano para cocinar" class="img-inf-2">
-                <div class="content-text-right">
-                    <h3 class="titulo-inf-nutri">Plátano</h3>
-                    <div class="descripcion-fruta">
-                        <p>El plátano es una fruta versátil que se consume principalmente cocida. Contiene vitamina A, vitamina C y vitamina B6, además de minerales como potasio. Es una fuente importante de energía y forma parte de muchos platillos tradicionales.</p>
+                    <div class="receta-ingredientes">
+                        <h4>Ingredientes:</h4>
+                        <ul>
+                            <li>2 bananos maduros</li>
+                            <li>1 taza de leche</li>
+                            <li>1 cucharada de miel</li>
+                            <li>Hielo al gusto</li>
+                        </ul>
                     </div>
-                    <ul class="lista-viñetas">
-                        <li class="item-nutricional"><strong>Característica:</strong> Se consume cocido</li>
-                        <li class="item-nutricional"><strong>Sabor:</strong> Menos dulce que el banano</li>
-                        <li class="item-nutricional"><strong>Temporada:</strong> Todo el año</li>
-                        <li class="item-nutricional"><strong>Beneficio:</strong> Alto en carbohidratos</li>
-                        <li class="item-nutricional"><strong>Vitamina:</strong> Rica en vitamina A</li>
-                        <li class="item-nutricional"><strong>Uso común:</strong> Frito, horneado, en sopas</li>
-                    </ul>
                 </div>
-            </div>
+            </article>
 
-            <!-- BLOQUE 3: MANGO -->
-            <div class="bloque-fruta">
-                <img src="../img/mango.png" alt="Mango tropical" class="img-inf-1">
-                <div class="content-text-right">
-                    <h3 class="titulo-inf-nutri">Mango</h3>
-                    <div class="descripcion-fruta">
-                        <p>El mango es una fruta dulce y jugosa muy popular en la Costa Sur. Aporta vitaminas A, C y E, que ayudan al sistema inmunológico y a la salud de la piel. Se consume fresco, en jugos y en diversas recetas.</p>
+            <!-- Mosaico: Receta 2 (izquierda) y Receta 3 (derecha) -->
+            <div class="recetas-mosaico">
+                <!-- Receta 2: Jugo de maracuyá -->
+                <article class="receta-item receta-mosaico-item">
+                    <div class="receta-imagen">
+                        <img src="../img/receta-maracuya.png" alt="Jugo de maracuyá" class="img-receta">
                     </div>
-                    <ul class="lista-viñetas">
-                        <li class="item-nutricional"><strong>Característica:</strong> Jugoso y aromático</li>
-                        <li class="item-nutricional"><strong>Sabor:</strong> Dulce intenso</li>
-                        <li class="item-nutricional"><strong>Temporada:</strong> Marzo a Junio</li>
-                        <li class="item-nutricional"><strong>Beneficio:</strong> Rico en antioxidantes</li>
-                        <li class="item-nutricional"><strong>Vitamina:</strong> Excelente fuente de C y A</li>
-                        <li class="item-nutricional"><strong>Uso común:</strong> Fresco, jugos, postres</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- BLOQUE 4: PAPAYA -->
-            <div class="bloque-fruta">
-                <img src="../img/papaya.png" alt="Papaya tropical" class="img-inf-2">
-                <div class="content-text-right">
-                    <h3 class="titulo-inf-nutri">Papaya</h3>
-                    <div class="descripcion-fruta">
-                        <p>La papaya es conocida por sus beneficios digestivos. Contiene vitamina C, vitamina A y ácido fólico, además de enzimas naturales que facilitan la digestión. Es común en desayunos y jugos naturales.</p>
+                    <div class="receta-contenido">
+                        <h3 class="receta-titulo">Jugo de maracuyá</h3>
+                        <div class="receta-descripcion">
+                            <p>El jugo de maracuyá es refrescante y de sabor ácido. Esta fruta es rica en vitamina C y antioxidantes, lo que ayuda a fortalecer el sistema inmunológico. Es muy popular en climas cálidos.</p>
+                        </div>
+                        <div class="receta-ingredientes">
+                            <h4>Ingredientes:</h4>
+                            <ul>
+                                <li>4 maracuyás maduros</li>
+                                <li>1 litro de agua</li>
+                                <li>Azúcar al gusto</li>
+                                <li>Hielo</li>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="lista-viñetas">
-                        <li class="item-nutricional"><strong>Característica:</strong> Pulpa suave y dulce</li>
-                        <li class="item-nutricional"><strong>Sabor:</strong> Dulce suave</li>
-                        <li class="item-nutricional"><strong>Temporada:</strong> Todo el año</li>
-                        <li class="item-nutricional"><strong>Beneficio:</strong> Mejora la digestión</li>
-                        <li class="item-nutricional"><strong>Vitamina:</strong> Rica en C y papaína</li>
-                        <li class="item-nutricional"><strong>Uso común:</strong> Fresca, ensaladas</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- BLOQUE 5: PIÑA -->
-            <div class="bloque-fruta">
-                <img src="../img/piña.png" alt="Piña tropical" class="img-inf-1">
-                <div class="content-text-right">
-                    <h3 class="titulo-inf-nutri">Piña</h3>
-                    <div class="descripcion-fruta">
-                        <p>La piña es una fruta refrescante de sabor dulce y ácido. Es rica en vitamina C, vitamina B1 y antioxidantes, lo que contribuye a fortalecer el sistema inmunológico. Se consume fresca, en jugos y en postres.</p>
+                </article>
+                <!-- Receta 3: Helado de coco -->
+                <article class="receta-item receta-mosaico-item">
+                    <div class="receta-imagen">
+                        <img src="../img/receta-coco.png" alt="Helado de coco" class="img-receta">
                     </div>
-                    <ul class="lista-viñetas">
-                        <li class="item-nutricional"><strong>Característica:</strong> Con corona de hojas</li>
-                        <li class="item-nutricional"><strong>Sabor:</strong> Agridulce refrescante</li>
-                        <li class="item-nutricional"><strong>Temporada:</strong> Todo el año</li>
-                        <li class="item-nutricional"><strong>Beneficio:</strong> Antiinflamatoria</li>
-                        <li class="item-nutricional"><strong>Vitamina:</strong> Rica en bromelina y C</li>
-                        <li class="item-nutricional"><strong>Uso común:</strong> Fresca, jugos, asada</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- BLOQUE 6: COCO -->
-            <div class="bloque-fruta">
-                <img src="../img/coco.png" alt="Coco tropical" class="img-inf-2">
-                <div class="content-text-right">
-                    <h3 class="titulo-inf-nutri">Coco</h3>
-                    <div class="descripcion-fruta">
-                        <p>El coco es una fruta tropical muy utilizada en las zonas costeras. Aporta vitaminas del complejo B y minerales, además de grasas saludables. Se usa en bebidas, dulces y comidas tradicionales.</p>
+                    <div class="receta-contenido">
+                        <h3 class="receta-titulo">Helado de coco</h3>
+                        <div class="receta-descripcion">
+                            <p>El helado de coco es una preparación tradicional en zonas costeras. El coco aporta minerales y grasas saludables, además de un sabor dulce y tropical. Es ideal para refrescarse en días calurosos.</p>
+                        </div>
+                        <div class="receta-ingredientes">
+                            <h4>Ingredientes:</h4>
+                            <ul>
+                                <li>2 tazas de leche de coco</li>
+                                <li>1 taza de crema de coco</li>
+                                <li>1/2 taza de azúcar</li>
+                                <li>Coco rallado para decorar</li>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="lista-viñetas">
-                        <li class="item-nutricional"><strong>Característica:</strong> Agua y pulpa comestible</li>
-                        <li class="item-nutricional"><strong>Sabor:</strong> Dulce natural</li>
-                        <li class="item-nutricional"><strong>Temporada:</strong> Todo el año</li>
-                        <li class="item-nutricional"><strong>Beneficio:</strong> Hidratante natural</li>
-                        <li class="item-nutricional"><strong>Vitamina:</strong> Minerales y electrolitos</li>
-                        <li class="item-nutricional"><strong>Uso común:</strong> Agua, pulpa, leche, aceite</li>
-                    </ul>
-                </div>
+                </article>
             </div>
 
-            <!-- BLOQUE 7: SANDÍA -->
-            <div class="bloque-fruta">
-                <img src="../img/sandia.png" alt="Sandía tropical" class="img-inf-1">
-                <div class="content-text-right">
-                    <h3 class="titulo-inf-nutri">Sandía</h3>
-                    <div class="descripcion-fruta">
-                        <p>La sandía es una fruta muy hidratante, ideal para climas cálidos. Contiene vitamina C, vitamina A y antioxidantes, y está compuesta en gran parte por agua. Se consume principalmente fresca.</p>
+            <!-- Receta 4: Mango con pepita y chamoy - imagen a la derecha -->
+            <article class="receta-item receta-imagen-derecha">
+                <div class="receta-imagen">
+                    <img src="../img/receta-mango.png" alt="Mango con pepita y chamoy" class="img-receta">
+                </div>
+                <div class="receta-contenido">
+                    <h3 class="receta-titulo">Mango con pepita y chamoy</h3>
+                    <div class="receta-descripcion">
+                        <p>El mango con pepita y chamoy es una forma muy común de consumir esta fruta. El mango es rico en vitaminas A y C, y al combinarse con pepita y chamoy se obtiene un sabor dulce, ácido y picante.</p>
                     </div>
-                    <ul class="lista-viñetas">
-                        <li class="item-nutricional"><strong>Característica:</strong> 92% agua</li>
-                        <li class="item-nutricional"><strong>Sabor:</strong> Dulce y refrescante</li>
-                        <li class="item-nutricional"><strong>Temporada:</strong> Verano</li>
-                        <li class="item-nutricional"><strong>Beneficio:</strong> Hidratante y diurética</li>
-                        <li class="item-nutricional"><strong>Vitamina:</strong> Rica en licopeno</li>
-                        <li class="item-nutricional"><strong>Uso común:</strong> Fresca, jugos</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- BLOQUE 8: MARACUYÁ -->
-            <div class="bloque-fruta">
-                <img src="../img/maracuya.png" alt="Maracuyá o fruta de la pasión" class="img-inf-1">
-                <div class="content-text-right">
-                    <h3 class="titulo-inf-nutri">Maracuyá</h3>
-                    <div class="descripcion-fruta">
-                        <p>El maracuyá es una fruta de sabor ácido y aromático. Contiene vitaminas A, C y antioxidantes, y es muy usada en jugos y postres. Es refrescante y nutritiva.</p>
+                    <div class="receta-ingredientes">
+                        <h4>Ingredientes:</h4>
+                        <ul>
+                            <li>2 mangos verdes o maduros</li>
+                            <li>Chamoy al gusto</li>
+                            <li>Pepita molida</li>
+                            <li>Limón y sal</li>
+                        </ul>
                     </div>
-                    <ul class="lista-viñetas">
-                        <li class="item-nutricional"><strong>Característica:</strong> Fruta de la pasión</li>
-                        <li class="item-nutricional"><strong>Sabor:</strong> Agridulce intenso</li>
-                        <li class="item-nutricional"><strong>Temporada:</strong> Octubre a Marzo</li>
-                        <li class="item-nutricional"><strong>Beneficio:</strong> Calmante natural</li>
-                        <li class="item-nutricional"><strong>Vitamina:</strong> Rica en antioxidantes</li>
-                        <li class="item-nutricional"><strong>Uso común:</strong> Jugos, postres</li>
-                    </ul>
                 </div>
-            </div>
+            </article>
 
-
-            <!-- BLOQUE 9: ZAPOTE -->
-            <div class="bloque-fruta">
-                <img src="../img/zapote.png" alt="Zapote tropical" class="img-inf-1">
-                <div class="content-text-right">
-                    <h3 class="titulo-inf-nutri">Zapote</h3>
-                    <div class="descripcion-fruta">
-                        <p>El zapote es una fruta de pulpa suave y dulce. Contiene vitamina A, vitamina C y carbohidratos naturales, lo que lo convierte en una buena fuente de energía.</p>
+            <!-- Receta 5: Licuado de papaya -->
+            <article class="receta-item">
+                <div class="receta-imagen">
+                    <img src="../img/receta-papaya.png" alt="Licuado de papaya" class="img-receta">
+                </div>
+                <div class="receta-contenido">
+                    <h3 class="receta-titulo">Licuado de papaya</h3>
+                    <div class="receta-descripcion">
+                        <p>El licuado de papaya es conocido por sus beneficios digestivos. La papaya contiene vitamina C, vitamina A y enzimas naturales que ayudan a la digestión. Es una bebida suave y saludable.</p>
                     </div>
-                    <ul class="lista-viñetas">
-                        <li class="item-nutricional"><strong>Característica:</strong> Pulpa anaranjada dulce</li>
-                        <li class="item-nutricional"><strong>Sabor:</strong> Muy dulce, como caramelo</li>
-                        <li class="item-nutricional"><strong>Temporada:</strong> Diciembre a Abril</li>
-                        <li class="item-nutricional"><strong>Beneficio:</strong> Energético natural</li>
-                        <li class="item-nutricional"><strong>Vitamina:</strong> Rica en A y C</li>
-                        <li class="item-nutricional"><strong>Uso común:</strong> Fresco, batidos</li>
-                    </ul>
+                    <div class="receta-ingredientes">
+                        <h4>Ingredientes:</h4>
+                        <ul>
+                            <li>1 taza de papaya picada</li>
+                            <li>1 taza de leche o yogurt</li>
+                            <li>1 cucharada de miel</li>
+                            <li>Hielo opcional</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </article>
 
-        <!-- Sección informativa final -->
-        <section class="contenido-general">
-            <h3 class="subtitulo-seccion">Datos Interesantes</h3>
-            <div class="info-general">
-                <div class="info-columna">
-                    <h4>Clima Ideal</h4>
-                    <p>Las frutas tropicales crecen mejor en climas cálidos y húmedos, con temperaturas entre 20°C y 30°C.</p>
-                </div>
-                <div class="info-columna">
-                    <h4>Regiones</h4>
-                    <p>Se cultivan principalmente en las costas del Pacífico y Atlántico de Guatemala.</p>
-                </div>
-                <div class="info-columna">
-                    <h4>Producción</h4>
-                    <p>Guatemala es uno de los principales exportadores de frutas tropicales en Centroamérica.</p>
-                </div>
-            </div>
+        </section>
+
+        <!-- Frase final -->
+        <section class="frase-recetas">
+            <blockquote>
+                "Las frutas también se disfrutan a través de recetas tradicionales y saludables."
+            </blockquote>
         </section>
 
     </main>
@@ -245,7 +183,7 @@
             
             <dl class="lista-footer">
                 <dt>Proyecto:</dt>
-                <dd>Página de frutas</dd>
+                <dd>Página de Frutas</dd>
                 
                 <dt>Estudiante:</dt>
                 <dd>Veliz</dd>
@@ -261,5 +199,6 @@
         </div>
     </footer>
 
+    <script src="../js/navigation.js"></script>
 </body>
 </html>

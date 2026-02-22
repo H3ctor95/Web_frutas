@@ -1569,9 +1569,9 @@ header {
 }
 
 
-/* ============================================
+/*
    TABLET ESTRECHO: 768px - 900px (bloques en columna)
-   ============================================ */
+*/
 
 @media (min-width: 768px) and (max-width: 900px) {
     .btn-menu {
@@ -1658,9 +1658,9 @@ header {
 }
 
 
-/* ============================================
+/*
    TABLET-FIRST: Estilos para tablet (901px - 1023px)
-   ============================================ */
+*/
 
 @media (min-width: 901px) and (max-width: 1023px) {
     header {
@@ -1816,10 +1816,9 @@ header {
 }
 
 
-/* ============================================
+/*
    DESKTOP: Estilos para pantallas grandes (1024px+)
-   Los estilos base ya definen el layout desktop
-   ============================================ */
+*/
 
 @media (min-width: 1024px) {
     /* Asegurar que el layout desktop se aplique correctamente */
